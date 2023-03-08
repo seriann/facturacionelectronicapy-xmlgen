@@ -1207,7 +1207,7 @@ class JSonDeMainValidateService {
           'Debe indicar el Número de Control de la Constancia en data.documentoAsociado.constanciaControl',
         );
       } else {
-        if ((data['documentoAsociado']['constanciaControl'] + '').length != 8) {
+        if (data['documentoAsociado']['constanciaTipo'] == 2 && (data['documentoAsociado']['constanciaControl'] + '').length != 8) {
           this.errors.push(
             'El Numero de Control de la Constancia "' +
               data['documentoAsociado']['constanciaControl'] +
@@ -1228,7 +1228,7 @@ class JSonDeMainValidateService {
               '" en data.documentoAsociado.constanciaNumero debe ser numérico ',
           );
         }
-        if ((data['documentoAsociado']['constanciaNumero'] + '').length != 11) {
+        if (data['documentoAsociado']['constanciaTipo'] == 2 && (data['documentoAsociado']['constanciaNumero'] + '').length != 11) {
           this.errors.push(
             'El Numero de la Constancia "' +
               data['documentoAsociado']['constanciaNumero'] +
