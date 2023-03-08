@@ -1221,7 +1221,7 @@ class JSonDeMainValidateService {
       ) {
         this.errors.push('Debe indicar el Numero de la Constancia en data.documentoAsociado.constanciaNumero');
       } else {
-        if (isNaN(data['documentoAsociado']['constanciaNumero'])) {
+        if (data['documentoAsociado']['constanciaTipo'] == 2 && isNaN(data['documentoAsociado']['constanciaNumero'])) {
           this.errors.push(
             'El Numero de la Constancia "' +
               data['documentoAsociado']['constanciaNumero'] +
