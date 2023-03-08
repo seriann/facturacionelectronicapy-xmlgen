@@ -1199,8 +1199,9 @@ class JSonDeMainValidateService {
     if (!data['documentoAsociado']) {
       this.errors.push('Debe indicar el Documento Asociado en data.documentoAsociado para el Tipo de Documento = 4');
     } else {
+      console.log(data['documentoAsociado'])
       if (
-        !(data['documentoAsociado']['constanciaControl'] && data['documentoAsociado']['constanciaControl'].length > 0)
+        data['documentoAsociado']['constanciaTipo'] == 2 && !((data['documentoAsociado']['constanciaControl'] && data['documentoAsociado']['constanciaControl'].length > 0))
       ) {
         this.errors.push(
           'Debe indicar el Número de Control de la Constancia en data.documentoAsociado.constanciaControl',
@@ -1216,7 +1217,7 @@ class JSonDeMainValidateService {
       }
 
       if (
-        !(data['documentoAsociado']['constanciaNumero'] && data['documentoAsociado']['constanciaNumero'].length > 0)
+        data['documentoAsociado']['constanciaTipo'] == 2 && !(data['documentoAsociado']['constanciaNumero'] && data['documentoAsociado']['constanciaNumero'].length > 0)
       ) {
         this.errors.push('Debe indicar el Numero de la Constancia en data.documentoAsociado.constanciaNumero');
       } else {
